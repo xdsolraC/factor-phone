@@ -1,0 +1,17 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Inicio from "./inicio.astro";
+import Servicios from "./servicios.astro";
+import Nosotros from "./nosotros.astro";
+import Contacto from "./contacto.astro";
+---
+
+<Layout title='Factor Phone'>
+    <Inicio />
+    <hr id='servicios' class='my-16 lg:my-20' />
+    <Servicios />
+    <hr id='nosotros' class='my-16 lg:my-20' />
+    <Nosotros />
+    <hr id='contacto' class='my-16 lg:my-20' />
+    <Contacto />
+</Layout>

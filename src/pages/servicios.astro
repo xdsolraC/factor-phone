@@ -1,0 +1,56 @@
+---
+import Card from "../components/Card.astro";
+import SalesImage from "../assets/Sales.svg";
+import RepairImage from "../assets/Repair.svg";
+import UnlockImage from "../assets/Unlock.svg";
+import AccesoriesImage from "../assets/Accesories.svg";
+
+const datos = [
+    {
+        servicio: "Venta de equipos",
+        detalles:
+            "Descubre una amplia gama de los últimos modelos de celulares y smartphones en nuestra tienda. Encuentra el equipo perfecto que se adapte a tus necesidades y presupuesto.",
+        image: SalesImage.src,
+    },
+    {
+        servicio: "Reparación",
+        detalles:
+            "Aunque especializados en la reparación de celulares, ofrecemos servicio técnico para otros dispositivos electrónicos, garantizando calidad y rapidez en cada reparación.",
+        image: RepairImage.src,
+    },
+    {
+        servicio: "Desbloqueos",
+        detalles:
+            "¿Necesitas desbloquear tu celular? En nuestra tienda, ofrecemos servicios de desbloqueo rápido y seguro para que puedas utilizar tu dispositivo con cualquier operador.",
+        image: UnlockImage.src,
+    },
+    {
+        servicio: "Accesorios",
+        detalles:
+            "Complementa tu celular con los mejores accesorios. Desde fundas hasta cargadores, tenemos todo lo que necesitas para proteger y mejorar la experiencia con tu dispositivo.",
+        image: AccesoriesImage.src,
+    },
+];
+---
+
+<div class='flex flex-col items-center gap-8'>
+    <h2 class='max-w-xs text-center text-5xl font-extrabold'>
+        Servicios que ofrecemos
+    </h2>
+
+    <ul class='flex flex-wrap justify-center gap-8'>
+        {
+            datos.map((elem) => {
+                return (
+                    <li class='list-none'>
+                        <Card
+                            servicio={elem.servicio}
+                            detalles={elem.detalles}
+                            imagen={elem.image}
+                        />
+                    </li>
+                );
+            })
+        }
+    </ul>
+</div>

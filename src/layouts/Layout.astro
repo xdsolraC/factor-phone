@@ -1,0 +1,52 @@
+---
+import { ViewTransitions } from "astro:transitions";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import "@fontsource-variable/jost";
+import Favicon from "/public/FactorPhone.svg";
+
+interface Props {
+    title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang='es'>
+    <head>
+        <meta charset='UTF-8' />
+        <meta
+            name='description'
+            content='¿Problemas con tu celular? ¡Nosotros te ayudamos! En nuestra tienda especializada en reparación de celulares, Contamos con un equipo de expertos en tecnología listos para solucionar cualquier problema.  Ya sea que
+            necesites reparar una pantalla rota, actualizar tu dispositivo o adquirir
+            el último modelo, estamos aquí para ayudarte. ¡Te esperamos!'
+        />
+        <meta name='keywords' content='FactorPhone, Reparación, Celulares' />
+        <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+        <link rel='icon' type='image/svg+xml' href={Favicon.src} />
+        <meta name='generator' content={Astro.generator} />
+        <title>{title}</title>
+        <ViewTransitions />
+    </head>
+    <body class='h-full m-auto p-6 max-w-screen-xl'>
+        <Header />
+        <main class='py-6'>
+            <slot />
+        </main>
+        <Footer />
+        <style is:global>
+            * {
+                font-family: "Jost Variable", sans-serif;
+                scroll-behavior: smooth;
+            }
+            html {
+                color-scheme: dark;
+            }
+            body {
+                background-image: url("../assets/Background.svg");
+                background-position: center;
+            }
+        </style>
+    </body>
+</html>

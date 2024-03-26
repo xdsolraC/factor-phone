@@ -1,0 +1,48 @@
+---
+interface Props {
+    servicio: string;
+    detalles: string;
+    imagen: string;
+}
+
+const { servicio, detalles, imagen } = Astro.props;
+---
+
+<div
+    class='min-w-[240px] max-w-[280px] h-[440px] bg-[#383838] border border-[#e5e7eb] rounded-2xl overflow-hidden'>
+    <img src={imagen} alt='Servicio' width='280' loading='lazy' />
+    <div class='p-5 h-[282px] flex flex-col gap-3'>
+        <h3 class='text-2xl font-bold text-center'>
+            {servicio}
+        </h3>
+        <p class='font-normal text-gray-400 text-center'>
+            {detalles}
+        </p>
+        <a
+            href='#contacto'
+            class='mt-auto bg-white hover:ring-1 ring-offset-2 ring-white ring-offset-current inline-flex justify-center items-center text-sm font-medium text-center text-[#444444] px-4 py-2 rounded-full hover:shadow-[1px_1px_30px_-10px_white] transition-all duration-150 ease-linear'>
+            Contáctanos
+            <svg
+                class='w-3.5 h-3.5 ml-2'
+                aria-hidden='true'
+                xmlns='http://www.w3.org/2000/svg'
+                fill='none'
+                viewBox='0 0 14 10'>
+                <path
+                    stroke='currentColor'
+                    stroke-linecap='round'
+                    stroke-linejoin='round'
+                    stroke-width='2'
+                    d='M1 5h12m0 0L9 1m4 4L9 9'></path>
+            </svg>
+        </a>
+    </div>
+</div>
+
+<style>
+    img {
+        width: 100%;
+        aspect-ratio: 16/9;
+        object-fit: cover;
+    }
+</style>

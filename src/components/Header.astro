@@ -1,0 +1,67 @@
+---
+import { Image } from "astro:assets";
+import NavButton from "./NavButton.astro";
+import FactorPhoneLogo from "../assets/FactorPhoneLogo.svg";
+
+const buttons = ["Inicio", "Servicios", "Nosotros", "Contacto"];
+---
+
+<header class='w-full'>
+    <div class='flex w-full justify-between flex-wrap items-center'>
+        <a href='/'>
+            <Image
+                src={FactorPhoneLogo}
+                alt='Logo de FactorPhone'
+                class='max-w-40'
+                loading='eager'
+            />
+        </a>
+
+        <label for='menu-toggle' class='cursor-pointer md:hidden block'>
+            <svg
+                class='fill-current rounded-full bg-[#383838]'
+                xmlns='http://www.w3.org/2000/svg'
+                width='40'
+                height='40'
+                viewBox='-10 -10 40 40'>
+                <path d='M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z'>
+                    <title>menu</title>
+                </path>
+            </svg>
+        </label>
+
+        <input class='hidden' type='checkbox' id='menu-toggle' />
+
+        <nav class='hidden md:flex md:items-center md:w-auto w-full' id='menu'>
+            <ul
+                class='items-center flex flex-col gap-5 md:gap-4 pt-6 md:flex-row md:pt-0'>
+                {
+                    buttons.map((btn) => {
+                        let btnLC = btn.toLowerCase();
+                        return (
+                            <li>
+                                <NavButton
+                                    href={
+                                        btnLC == "inicio" ? "/" : `#${btnLC}`
+                                    }>
+                                    {btn}
+                                </NavButton>
+                            </li>
+                        );
+                    })
+                }
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<style>
+    header {
+        transition: all 0.5s;
+    }
+
+    #menu-toggle:checked + #menu {
+        opacity: 1;
+        display: block;
+    }
+</style>

@@ -1,0 +1,67 @@
+---
+import { Image } from "astro:assets";
+import PhoneLogo from "../assets/Phone.svg";
+---
+
+<div
+    class='h-full w-full flex flex-col gap-8 items-center text-center lg:justify-between lg:text-left lg:pr-[6.6rem] lg:flex-row'>
+    <div class='flex flex-col gap-10 lg:items-start lg:order-2'>
+        <Image
+            src={PhoneLogo}
+            alt='Logo de FactorPhone'
+            class='w-24 md:w-36 lg:w-60'
+            loading='eager'
+        />
+    </div>
+
+    <div class='flex flex-col items-center gap-8 max-w-3xl lg:items-start'>
+        <h1 class='leading-tight text-4xl lg:text-5xl font-normal'>
+            En celulares,<br />
+            <strong>tu mejor opción! (◕‿−).</strong>
+        </h1>
+
+        <p class='text-xl lg:text-2xl font-normal max-w-md'>
+            Siempre brindando los mejores servicios del mercado en cuanto a
+            reparación y venta de equipos electrónicos.
+        </p>
+        <div class='flex flex-col mm:flex-row gap-4'>
+            <a
+                class='bg-white font-black hover:ring-2 ring-offset-2 ring-white ring-offset-current inline-flex justify-center items-center text-[#212121] px-5 py-2 rounded-full hover:shadow-[1px_1px_30px_-10px_white] transition-all duration-150 ease-linear'
+                href='#servicios'>
+                Leer más
+                <svg
+                    class='w-3.5 h-3.5 ml-2'
+                    aria-hidden='true'
+                    xmlns='http://www.w3.org/2000/svg'
+                    fill='none'
+                    viewBox='0 0 14 10'>
+                    <path
+                        stroke='currentColor'
+                        stroke-linecap='round'
+                        stroke-linejoin='round'
+                        stroke-width='2'
+                        d='M1 5h12m0 0L9 1m4 4L9 9'></path>
+                </svg>
+            </a>
+
+            <a
+                class='bg-white font-black hover:ring-2 ring-offset-2 ring-white ring-offset-current inline-flex justify-center items-center text-[#212121] px-5 py-2 rounded-full hover:shadow-[1px_1px_30px_-10px_white] transition-all duration-150 ease-linear'
+                href='#contacto'>
+                Contáctanos
+                <svg
+                    class='w-3.5 h-3.5 ml-2'
+                    aria-hidden='true'
+                    xmlns='http://www.w3.org/2000/svg'
+                    fill='none'
+                    viewBox='0 0 14 10'>
+                    <path
+                        stroke='currentColor'
+                        stroke-linecap='round'
+                        stroke-linejoin='round'
+                        stroke-width='2'
+                        d='M1 5h12m0 0L9 1m4 4L9 9'></path>
+                </svg>
+            </a>
+        </div>
+    </div>
+</div>

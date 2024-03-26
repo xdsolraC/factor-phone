@@ -1,0 +1,18 @@
+---
+import FactorPhoneLogo from "../assets/FactorPhoneLogo.svg";
+import Image from "astro/components/Image.astro";
+---
+
+<footer>
+    <hr class='my-4 lg:my-6' />
+    <div class='flex w-full justify-center flex-wrap items-center'>
+        <a href='/'>
+            <Image
+                src={FactorPhoneLogo}
+                alt='Logo de FactorPhone'
+                class='max-w-40'
+                loading='lazy'
+            />
+        </a>
+    </div>
+</footer>
